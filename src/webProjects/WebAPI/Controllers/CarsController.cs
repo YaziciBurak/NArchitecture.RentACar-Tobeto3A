@@ -35,7 +35,7 @@ public class CarsController : BaseController
         return Created("", await Mediator.Send(new GetListCarQuery()));
     }
 
-    [HttpPost("GetById")]
+    [HttpGet("GetById")]
     public async Task<IActionResult> GetById([FromQuery] GetByIdCarQuery query)
     {
         return Created("", await Mediator.Send(query));

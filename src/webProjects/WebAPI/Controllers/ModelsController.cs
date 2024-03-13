@@ -35,7 +35,7 @@ public class ModelsController : BaseController
         return Created("", await Mediator.Send(new GetListModelQuery()));
     }
 
-    [HttpPost("GetById")]
+    [HttpGet("GetById")]
     public async Task<IActionResult> GetById([FromQuery] GetByIdModelQuery query)
     {
         return Created("", await Mediator.Send(query));

@@ -3,7 +3,6 @@ using Application.Features.Brands.Commands.Delete;
 using Application.Features.Brands.Commands.Update;
 using Application.Features.Brands.Queries.GetById;
 using Application.Features.Brands.Queries.GetList;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -36,7 +35,7 @@ namespace WebAPI.Controllers
             return Created("", await Mediator.Send(new GetListBrandQuery()));
         }
 
-        [HttpPost("GetById")]
+        [HttpGet("GetById")]
         public async Task<IActionResult> GetById([FromQuery] GetByIdBrandQuery query)
         {
             return Created("", await Mediator.Send(query));
