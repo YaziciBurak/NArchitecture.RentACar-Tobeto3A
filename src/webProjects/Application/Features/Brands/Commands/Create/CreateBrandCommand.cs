@@ -9,4 +9,6 @@ public class CreateBrandCommand:IRequest<CreatedBrandResponse>,IIntervalRequest,
 {
     public string Name { get; set; }
     public int Interval => 1;
+    public bool BypassCache { get; }
+    public string CacheKey => "brand-list";
 }
