@@ -7,12 +7,10 @@ using MediatR;
 
 namespace Application.Features.Brands.Queries.GetList;
 
-public class GetListBrandQuery : IRequest<List<GetListedBrandResponse>>
+public class GetListBrandQuery : IRequest<List<GetListedBrandResponse>>, ICachableRequest
 {
     public bool BypassCache  {get;}
-
     public string CacheKey => "brand-list";
-
     public TimeSpan? SlidingExpiration { get;}
 
     public class GetListBrandQueryHandler : IRequestHandler<GetListBrandQuery, List<GetListedBrandResponse>>

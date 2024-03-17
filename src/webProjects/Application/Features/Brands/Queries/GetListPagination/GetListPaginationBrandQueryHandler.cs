@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Application.Features.Brands.Queries.GetListPagination;
 
-public class GetListPaginationBrandQueryHandler : IRequestHandler<GetListPaginayionBrandQuery, BrandListModel>
+public class GetListPaginationBrandQueryHandler : IRequestHandler<GetListPaginationBrandQuery, BrandListModel>
 {
     private readonly IBrandRepository _brandRepository;
     private readonly IMapper _mapper;
@@ -18,7 +18,7 @@ public class GetListPaginationBrandQueryHandler : IRequestHandler<GetListPaginay
         _mapper = mapper;
     }
 
-    public async Task<BrandListModel> Handle(GetListPaginayionBrandQuery request, CancellationToken cancellationToken)
+    public async Task<BrandListModel> Handle(GetListPaginationBrandQuery request, CancellationToken cancellationToken)
     {
         IPaginate<Brand> brands = await _brandRepository.GetListPaginateAsync
             (index: request.PageRequest.Page, size: request.PageRequest.PageSize);

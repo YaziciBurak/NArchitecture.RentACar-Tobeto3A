@@ -48,7 +48,7 @@ namespace WebAPI.Controllers
         [HttpGet("GetListPagination")]
         public async Task<IActionResult> GetListPagination([FromQuery] PageRequest pageRequest)
         {
-            GetListPaginayionBrandQuery query = new() { PageRequest = pageRequest };
+            GetListPaginationBrandQuery query = new() { PageRequest = pageRequest };
             BrandListModel result = await Mediator.Send(query);
             return Ok(result);
         }

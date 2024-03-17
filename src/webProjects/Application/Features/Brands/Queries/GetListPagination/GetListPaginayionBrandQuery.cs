@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Features.Brands.Queries.GetListPagination;
 
-public class GetListPaginayionBrandQuery : IRequest<BrandListModel>
+public class GetListPaginationBrandQuery : IRequest<BrandListModel>
 {
     public PageRequest PageRequest { get; set; }
 }
