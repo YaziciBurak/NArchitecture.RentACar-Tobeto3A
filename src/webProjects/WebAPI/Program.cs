@@ -1,5 +1,6 @@
 using Application;
 using Persistence;
+using Core.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddSecurityServices();
 builder.Services.AddApplicationServices();
 builder.Services.AddStackExchangeRedisCache(opt => opt.Configuration = "localhost:6379");
 

@@ -74,7 +74,4 @@ public class FileHelper
         var result = directoryPath + creatingFileName;
         return (result, $@"\Images\{basePath}\{creatingFileName}");
     }
-
-
-
 }

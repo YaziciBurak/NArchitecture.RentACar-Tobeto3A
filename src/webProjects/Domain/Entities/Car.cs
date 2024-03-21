@@ -10,6 +10,7 @@ public class Car : BaseEntity<int>
     public int State { get; set; }  
     public double DailyPrice { get; set; }
     public Model Model { get; set; }
+    public ICollection<CarImage> CarImages { get; set; }
     public Car()
     {
      
